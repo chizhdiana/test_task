@@ -91,7 +91,15 @@ public class OffersPage extends Main {
         WebElement minval = Get_min(List_offers(driver));
         System.out.println("Min_value is"+ " "+ minval.getText());
         minval.click();
-       driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+       driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+
+
+   }
+
+   public String getCurrentPageTitle(WebDriver driver){
+     DataforTests.currentTitle =   driver.getTitle();
+       System.out.print( DataforTests.currentTitle);
+       return  DataforTests.currentTitle;
 
    }
 

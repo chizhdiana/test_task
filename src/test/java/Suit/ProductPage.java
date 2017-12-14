@@ -6,7 +6,7 @@ import org.testng.Assert;
 
 import java.util.concurrent.TimeUnit;
 
-import static Suit.DataforTests.currentURL;
+import static Suit.DataforTests.*;
 
 
 /**
@@ -23,12 +23,13 @@ public class ProductPage extends Main {
 
 
     public String checkPage(){
-        driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
- currentURL = driver.getCurrentUrl();
+        driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+ newTitle = driver.getTitle();
+ System.out.println("Product page is"+" "+ newTitle );
+Assert.assertFalse(DataforTests.newTitle.contentEquals(currentTitle));
 
-Assert.assertFalse(DataforTests.url.contentEquals(currentURL));
-System.out.println("Product page is"+" "+ currentURL );
-return currentURL;
+System.out.println("Last page is"+" "+ DataforTests.currentTitle);
+return newTitle;
 }
 
 }

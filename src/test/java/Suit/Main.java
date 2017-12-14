@@ -50,20 +50,18 @@ public class Main {
          objFindPage.dropDownSelect(DataforTests.find_prod);
 
 
-
-
-
     }
 
     @Test(priority = 2)
     public void allOffersPageTest(){
         objOffersPge = new OffersPage(driver);
+        objOffersPge. getCurrentPageTitle(driver);
         objOffersPge.button_Offer(driver);
         objOffersPge.findListOffer();
         objOffersPge.listSize();
         objOffersPge.List_offers(driver);
         objOffersPge.selectMin(driver);
-       // objOffersPge.findCurentPage(driver);
+
 
 
 
@@ -75,6 +73,8 @@ public class Main {
         objProductPage.checkPage();
 
     }
+
+
 
     @AfterTest
     public void afterTest(){
