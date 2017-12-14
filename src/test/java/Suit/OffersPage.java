@@ -8,6 +8,7 @@ import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by diana.chizh on 13.12.2017.
@@ -86,10 +87,11 @@ public class OffersPage extends Main {
 
    }
 
-   public void selectMin(){ // select min price
+   public void selectMin(WebDriver driver){ // select min price
         WebElement minval = Get_min(List_offers(driver));
         System.out.println("Min_value is"+ " "+ minval.getText());
         minval.click();
+       driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
    }
 
@@ -112,12 +114,7 @@ public class OffersPage extends Main {
     }
 
 
-/*public  String findCurentPage(WebDriver driver){
-        System.out.println(driver.getCurrentUrl());
-       return driver.getCurrentUrl();
 
-}
-*/
 
 
 }

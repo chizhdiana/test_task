@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
+import java.util.concurrent.TimeUnit;
+
 import static Suit.DataforTests.currentURL;
 
 
@@ -21,7 +23,9 @@ public class ProductPage extends Main {
 
 
     public String checkPage(){
+        driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
  currentURL = driver.getCurrentUrl();
+
 Assert.assertFalse(DataforTests.url.contentEquals(currentURL));
 System.out.println("Product page is"+" "+ currentURL );
 return currentURL;

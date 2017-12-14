@@ -62,7 +62,7 @@ public class Main {
         objOffersPge.findListOffer();
         objOffersPge.listSize();
         objOffersPge.List_offers(driver);
-        objOffersPge.selectMin();
+        objOffersPge.selectMin(driver);
        // objOffersPge.findCurentPage(driver);
 
 
