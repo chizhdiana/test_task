@@ -82,24 +82,31 @@ public class OffersPage extends Main {
            }
 
 
-       }System.out.println("List_3 size"+ " "+ list_3.size());
+       }//System.out.println("List_3 size"+ " "+ list_3.size());
        return list_3;
 
    }
 
-   public void selectMin(WebDriver driver){ // select min price
-        WebElement minval = Get_min(List_offers(driver));
-        System.out.println("Min_value is"+ " "+ minval.getText());
-        minval.click();
-       driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+   public WebElement selectMin(WebDriver driver){ // select min price
+        DataforTests.minvalue = Get_min(List_offers(driver));
+        System.out.println("Min_value is"+ " "+ DataforTests.minvalue.getText());
+        return DataforTests.minvalue;
+
 
 
    }
 
+   public void clickMinval(WebDriver driver ,WebElement min){
+       System.out.println("CLICK metod performed");
+       min.click();
+       driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+
+   }
+
    public String getCurrentPageTitle(WebDriver driver){
-     DataforTests.currentTitle =   driver.getTitle();
-       System.out.print( DataforTests.currentTitle);
-       return  DataforTests.currentTitle;
+     DataforTests.currenPage =   driver.getCurrentUrl();
+       System.out.print( DataforTests.currenPage);
+       return  DataforTests.currenPage;
 
    }
 

@@ -61,6 +61,9 @@ public class Main {
         objOffersPge.listSize();
         objOffersPge.List_offers(driver);
         objOffersPge.selectMin(driver);
+        objOffersPge.clickMinval(driver,DataforTests.minvalue);
+
+        wait = new WebDriverWait(driver, 20);
 
 
 
